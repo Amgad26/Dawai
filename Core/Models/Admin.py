@@ -1,15 +1,14 @@
-from .User import User
-
+from User import User
 class Admin(User):
     
-    def __init__(self , username , password):
+    def __init__(self , username , password , address):
         
-        super().__init__(username)
+        super().__init__(username , address , role = "Admin")
         self.password = password
         
-    def role(self):
+    def get_role(self):
         
-        return "Admin"
+        return self.role
     
     def verify_password(self , password):
     

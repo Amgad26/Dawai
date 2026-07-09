@@ -17,5 +17,3 @@ class Address:
             address += f" - {self.extra}"
             
         return address
-         
-    

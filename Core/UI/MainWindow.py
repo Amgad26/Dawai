@@ -1,4 +1,6 @@
 from PyQt6.QtWidgets import QApplication , QMainWindow , QStackedWidget
+from PyQt6.QtGui import QPalette , QColor
+from Style.Colors import Colors
 from UserSelectScreen import UserSelectScreen
 
 class MainWindow(QMainWindow):
@@ -7,7 +9,7 @@ class MainWindow(QMainWindow):
         
         super().__init__()
         self.setWindowTitle("Dawai — دوائي")
-        self.setMinimumSize(400, 650)
+        self.setFixedSize(412, 911)
 
         # The stack — holds all screens
         self.stack = QStackedWidget()
@@ -33,6 +35,9 @@ class MainWindow(QMainWindow):
 if __name__ == "__main__":
     
     app = QApplication([])
+    palette = QPalette()
+    palette.setColor(QPalette.ColorRole.Window , QColor(Colors.BG))
+    app.setPalette(palette)
     window = MainWindow()
     window.show()
     app.exec()
